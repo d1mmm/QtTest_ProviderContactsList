@@ -11,8 +11,8 @@ CONFIG += c++11
 SOURCES += \
     createcontacts.cpp \
     favorites.cpp \
-    main.cpp \
-    contactlistprovider.cpp
+    contactlistprovider.cpp \
+    main.cpp
 
 HEADERS += \
     contactlistprovider.h \

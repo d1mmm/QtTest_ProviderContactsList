@@ -9,6 +9,4 @@ int main(int argc, char *argv[])
     ContactListProvider* w = new ContactListProvider(contacts);
     w->show();
     return a.exec();
-    delete contacts;
-    delete w;
 }

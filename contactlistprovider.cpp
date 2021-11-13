@@ -34,35 +34,28 @@ ContactListProvider::~ContactListProvider()
 void ContactListProvider::on_listWidget_itemClicked(QListWidget *wid)
 {
     QListWidgetItem *item = ui->listWidget->currentItem();
-    for(int i = 0; i < ui->listWidget->count(); ++i){
-        wid->addItem(item[i].clone());
-        break;
-    }
+    wid->addItem(item->clone());
 }
 
-// Addin favorites contacts to form and starting Favorites form // only one!!!!
+// Addin favorites contacts to form and starting Favorites form
 void ContactListProvider::on_Favorites_clicked()
 {
-    QListWidgetItem *item = new QListWidgetItem;
+    QListWidgetItem *item;
     QListWidget* wid = new QListWidget;
-
     on_listWidget_itemClicked(wid);
 
-    for(int i = 0; i < wid->count(); ++i){
-        item[i] = wid->item(i)[i];
-    }
+    item = wid->item(0);
 
     Favorites* favorites = new Favorites(item->clone());
     favorites->setModal(true);
     favorites->exec();
 
-    delete item;
     delete wid;
     delete favorites;
 }
 
 //Show different styles
-void ContactListProvider::on_Grid_clicked()
+void ContactListProvider::on_Grid_clicked() const
 {
     if(ui->listWidget->viewMode() == QListView::ListMode){
         ui->listWidget->setFlow(QListView::LeftToRight);
@@ -85,7 +78,7 @@ void ContactListProvider::on_listWidget_itemDoubleClicked()
 }
 
 //Searching
-void ContactListProvider::on_lineEdit_textChanged(const QString& arg1)
+void ContactListProvider::on_lineEdit_textChanged(const QString& arg1) const
 {
     QList<QListWidgetItem*> all = ui->listWidget->findItems("", Qt::MatchContains | Qt::MatchRecursive);
     foreach(QListWidgetItem* item, all)

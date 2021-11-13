@@ -189,7 +189,7 @@ color: rgb(170, 0, 127);
 font: 10pt &quot;Bahnschrift SemiLight&quot;;</string>
         </property>
         <property name="text">
-         <string>Search</string>
+         <string/>
         </property>
         <property name="maxLength">
          <number>20</number>

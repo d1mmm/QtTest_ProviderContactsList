@@ -16,11 +16,11 @@ public:
     ContactListProvider(CreateContacts *contacts, QWidget *parent = nullptr);
     ~ContactListProvider();
 private slots:
-    void on_Grid_clicked(); // Button for different styles
+    void on_Grid_clicked() const; // Button for different styles
     void on_Favorites_clicked(); // Button to favorites contacts
     void on_listWidget_itemDoubleClicked(); // Calling to somebody
     void on_listWidget_itemClicked(QListWidget* wid); // Contact selection
-    void on_lineEdit_textChanged(const QString &arg1); // Searching
+    void on_lineEdit_textChanged(const QString &arg1) const; // Searching
 private:
     Ui::ContactListProvider *ui;
 };
