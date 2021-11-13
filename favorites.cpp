@@ -31,6 +31,8 @@ Favorites::~Favorites()
 // Calling to somefavotites
 void Favorites::on_favoritesListWidget_itemDoubleClicked()
 {
+    ui->lineEdit->setText("Calling");
     QMessageBox::information(this, "Calling", "Calling...");
+    ui->lineEdit->clear();
 }
 

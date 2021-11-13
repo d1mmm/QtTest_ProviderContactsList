@@ -49,7 +49,6 @@ void ContactListProvider::on_Favorites_clicked()
     Favorites* favorites = new Favorites(item->clone());
     favorites->setModal(true);
     favorites->exec();
-
     delete wid;
     delete favorites;
 }
@@ -74,7 +73,9 @@ void ContactListProvider::on_Grid_clicked() const
 // Calling to somebody
 void ContactListProvider::on_listWidget_itemDoubleClicked()
 {
+    ui->statusbar->showMessage("Calling");
     QMessageBox::information(this, "Calling", "Calling...");
+    ui->statusbar->clearMessage();
 }
 
 //Searching
