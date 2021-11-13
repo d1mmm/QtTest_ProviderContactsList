@@ -1,0 +1,11 @@
+<RCC>
+    <qresource prefix="/rec">
+        <file>img/Cartman_normal_icon_30695.png</file>
+        <file>img/Randy_Marsh_Guitar_Hero_Icon_3_30683.png</file>
+        <file>img/Butters_Marjorine_icon_30702.png</file>
+        <file>img/Butters_Mr_Biggles_icon_30664.png</file>
+        <file>img/grid_lines_icon-icons.com_49854.png</file>
+        <file>img/mypc_star.png</file>
+    </qresource>
+    <qresource prefix="/"/>
+</RCC>
